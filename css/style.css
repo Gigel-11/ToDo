@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1d2e;
+  color: #c8cde0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #141622;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #2a2d42;
+}
+
+header .logo {
+  color: #6c8ef5;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+header .logo span {
+  background-color: #6c8ef5;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+header input[type="text"] {
+  background-color: #1e2136;
+  border: 1px solid #2e3250;
+  color: #c8cde0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 220px;
+  font-size: 13px;
+}
+
+header input[type="text"]::placeholder {
+  color: #565d80;
+}
+
+header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header .notif-btn {
+  background: none;
+  border: 1px solid #2e3250;
+  color: #c8cde0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1;
+}
+
+nav {
+  background-color: #141622;
+  width: 200px;
+  padding: 20px 12px;
+  border-right: 1px solid #2a2d42;
+}
+
+nav .section-title {
+  font-size: 11px;
+  color: #565d80;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-left: 8px;
+}
+
+nav ul {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #9098b8;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+nav ul li a:hover {
+  background-color: #1e2136;
+  color: #c8cde0;
+}
+
+nav ul li a.active {
+  background-color: #1e2136;
+  color: #6c8ef5;
+}
+
+nav ul li a .badge {
+  background-color: #6c8ef5;
+  color: white;
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+nav ul li a .badge.red    { background-color: #d9534f; }
+nav ul li a .badge.green  { background-color: #3dbf7c; }
+nav ul li a .badge.orange { background-color: #e08c3b; }
+
+nav .cat-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+nav .progress-box {
+  margin-top: 16px;
+}
+
+nav .progress-box p {
+  font-size: 12px;
+  color: #565d80;
+  margin-bottom: 4px;
+}
+
+nav .progress-box .bar {
+  background-color: #2e3250;
+  border-radius: 4px;
+  height: 6px;
+  margin-bottom: 4px;
+}
+
+nav .progress-box .bar .fill {
+  background-color: #6c8ef5;
+  width: 0%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+nav .progress-box small {
+  font-size: 11px;
+  color: #565d80;
+}
+
+nav .user {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-top: 1px solid #2a2d42;
+}
+
+nav .user .avatar {
+  background-color: #6c8ef5;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav .user .name {
+  font-size: 13px;
+  color: #c8cde0;
+}
+
+nav .user .sub {
+  font-size: 11px;
+  color: #565d80;
+}
+
+main {
+  flex: 1;
+  padding: 24px 28px;
+}
+
+main h1 {
+  font-size: 22px;
+  color: #e0e4f8;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background-color: #1e2136;
+  border: 1px solid #2e3250;
+  border-radius: 8px;
+  padding: 16px 20px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stat-card .icon { font-size: 22px; }
+
+.stat-card .info .label {
+  font-size: 12px;
+  color: #565d80;
+}
+
+.stat-card .info .value {
+  font-size: 26px;
+  color: #e0e4f8;
+  font-weight: bold;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  background-color: #1e2136;
+  border: 1px solid #2e3250;
+  color: #9098b8;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.filters button.active {
+  background-color: #6c8ef5;
+  border-color: #6c8ef5;
+  color: white;
+}
+
+.filters .add-btn {
+  margin-left: auto;
+  background-color: #6c8ef5;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.section-label {
+  font-size: 14px;
+  color: #9098b8;
+  margin-bottom: 12px;
+}
+
+.section-label span {
+  background-color: #2e3250;
+  color: #6c8ef5;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.task-card {
+  background-color: #1e2136;
+  border: 1px solid #2e3250;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.task-card input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #6c8ef5;
+}
+
+.task-card .task-info { flex: 1; }
+
+.task-card .task-title {
+  font-size: 14px;
+  color: #dce0f5;
+  margin-bottom: 4px;
+}
+
+.task-card .task-desc {
+  font-size: 12px;
+  color: #565d80;
+  margin-bottom: 8px;
+}
+
+.task-card .tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.tag.munca  { background-color: #1e3a5f; color: #5ba3d4; }
+.tag.edu    { background-color: #3a2060; color: #a87edb; }
+.tag.san    { background-color: #1e4a3a; color: #5bc99a; }
+.tag.high   { background-color: #4a1e1e; color: #d96a6a; }
+.tag.med    { background-color: #3a3010; color: #c8a840; }
+.tag.low    { background-color: #1e3a2a; color: #4dba7a; }
+.tag.date   { background-color: transparent; color: #565d80; }
+.tag.expire { background-color: #4a1e1e; color: #d96a6a; }
+
+.task-card .task-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.task-card .task-actions button {
+  background: none;
+  border: 1px solid #2e3250;
+  color: #565d80;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.task-card .task-actions button:hover { color: #c8cde0; }
+
+.task-card.done .task-title {
+  text-decoration: line-through;
+  color: #565d80;
+}
+
+footer {
+  background-color: #141622;
+  border-top: 1px solid #2a2d42;
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  color: #3a3f60;
+}
