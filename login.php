@@ -1,13 +1,19 @@
 <?php
+
 require_once 'php/auth.php';
 require_once 'php/functions.php';
 
 if (isLoggedIn()) {
-    header('Location: index.php');
-    exit;
+  header('Location: todo.php');
+  exit;
 }
 
 $error = '';
+$success = '';
+
+if (isset($_GET['registered'])) {
+  $success = 'Contul a fost creat cu succes. Te poți autentifica.';
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email    = trim($_POST['email']    ?? '');
@@ -18,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $user = loginUser($email, $password);
         if ($user) {
-            $_SESSION['user'] = $user;
-            header('Location: index.php');
-            exit;
+          $_SESSION['user'] = $user;
+          header('Location: todo.php');
+          exit;
         } else {
             $error = 'Email sau parolă incorectă.';
         }
@@ -62,6 +68,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <?php if ($error): ?>
   <div class="msg-error"><?= htmlspecialchars($error) ?></div>
+  <?php endif; ?>
+
+  <?php if ($success): ?>
+  <div class="msg-success"><?= htmlspecialchars($success) ?></div>
   <?php endif; ?>
 
   <form method="POST" action="login.php">

@@ -14,12 +14,93 @@ body {
 }
 
 header {
-  background-color: #141622;
-  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,17,32,0.92);
+  padding: 0 clamp(20px, 4vw, 80px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #2a2d42;
+  height: 64px;
+  border-bottom: 1px solid #232642;
+  overflow: visible;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  flex-wrap: nowrap;
+  position: relative;
+  top: 0;
+  z-index: 105;
+  background: transparent;
+}
+
+.btn {
+  font-weight: 500;
+  font-size: 14px;
+  padding: 9px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #2e3250;
+  color: #9098b8;
+}
+.nav-actions a { display: inline-block; }
+.nav-actions a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 110px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  /* make all header buttons the same color */
+  background: #6c8ef5;
+  border: 1px solid #6c8ef5;
+  color: #fff;
+}
+.btn-ghost:hover { border-color: #6c8ef5; color: #6c8ef5; }
+
+/* header-specific hover for uniform buttons */
+.nav-actions a.btn:hover { background: #5a7de0; color: #fff; }
+
+.btn-primary {
+  background: #6c8ef5;
+  border: 1px solid #6c8ef5;
+  color: #fff;
+}
+.btn-primary:hover { background: #5a7de0; box-shadow: 0 6px 24px rgba(108,142,245,0.25); }
+
+.nav-actions a.btn, .nav-actions a.btn * { vertical-align: middle; }
+
+.nav-actions::before,
+.nav-actions::after,
+.nav-actions > div {
+  background: transparent !important;
+}
+
+.btn, .btn:focus, .btn:active, .btn:hover { outline: none; box-shadow: none; }
+.btn-primary:hover { box-shadow: 0 6px 24px rgba(108,142,245,0.25); }
+
+@media (max-width: 900px) {
+  header { padding: 0 18px; }
+  .nav-actions { gap: 8px; }
+  .nav-actions a.btn { min-width: 100px; padding: 7px 12px; height: 36px; }
+}
+
+@media (max-width: 480px) {
+  .nav-actions { flex-wrap: wrap; gap: 6px; }
+  .nav-actions a.btn { min-width: 90px; padding: 6px 10px; height: 34px; font-size: 13px; }
 }
 
 header .logo {
@@ -34,6 +115,27 @@ header .logo span {
   padding: 2px 8px;
   border-radius: 4px;
   margin-right: 6px;
+  font-size: 14px;
+}
+
+.nav-logo {
+  color: #6c8ef5;
+  font-size: 22px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo .mark {
+  background: #6c8ef5;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
 }
 
@@ -76,7 +178,6 @@ nav {
   background-color: #141622;
   width: 200px;
   padding: 20px 12px;
-  border-right: 1px solid #2a2d42;
 }
 
 nav .section-title {

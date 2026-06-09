@@ -7,9 +7,6 @@ if (session_status() === PHP_SESSION_NONE) session_start();
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ToDo — Organizează-ți ziua</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -129,6 +126,20 @@ if (session_status() === PHP_SESSION_NONE) session_start();
       color: #fff;
     }
     .btn-primary:hover { background: #5a7de0; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(108,142,245,0.35); }
+
+    .nav-actions a.btn {
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      min-width: 110px;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+    .nav-actions a.btn:hover { background: #5a7de0; transform: none; box-shadow: 0 6px 24px rgba(108,142,245,0.35); }
 
     .hero {
       position: relative; z-index: 1;
@@ -643,13 +654,14 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 <div class="blob blob-2"></div>
 
 <header>
-  <a href="landing.php" class="nav-logo">
+  <a href="index.php" class="nav-logo">
     <span class="mark">✦</span>
     ToDo
   </a>
   <nav class="nav-actions">
     <a href="login.php" class="btn btn-ghost">Autentificare</a>
     <a href="register.php" class="btn btn-primary">Încearcă gratuit</a>
+    <a href="contact.php" class="btn btn-ghost">Contact</a>
   </nav>
 </header>
 

@@ -94,7 +94,10 @@ function categoryClass(string $c): string {
 </div>
 
 <header>
-  <div class="logo"><span>✦</span> ToDo</div>
+  <a href="index.php" class="nav-logo">
+    <span class="mark">✦</span>
+    ToDo
+  </a>
   <div class="header-right">
     <input type="text" id="searchInput" placeholder="🔍 Caută sarcini..."/>
     <a href="logout.php" class="notif-btn" title="Deconectare">⏻</a>
@@ -124,15 +127,6 @@ function categoryClass(string $c): string {
       </li>
       <?php endforeach; ?>
     </ul>
-
-    <div class="progress-box">
-      <p>Progres azi</p>
-      <?php $todayTotal = count($stats['todayList']); $todayDone = 0; ?>
-      <p style="font-size:12px;color:#9098b8;margin-bottom:4px;">Sarcini &nbsp; <?= $todayDone ?> / <?= $todayTotal ?></p>
-      <div class="bar"><div class="fill" style="width:<?= $todayTotal ? round($todayDone/$todayTotal*100) : 0 ?>%"></div></div>
-      <small><?= $todayTotal ? round($todayDone/$todayTotal*100) : 0 ?>% completat</small>
-    </div>
-
     <div class="user">
       <div class="avatar"><?= strtoupper(substr($user['name'], 0, 2)) ?></div>
       <div>

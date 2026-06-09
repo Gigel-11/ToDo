@@ -3,8 +3,8 @@ require_once 'php/auth.php';
 require_once 'php/functions.php';
 
 if (isLoggedIn()) {
-    header('Location: index.php');
-    exit;
+  header('Location: todo.php');
+  exit;
 }
 
 $error   = '';
@@ -26,7 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Parolele nu coincid.';
     } else {
         if (registerUser($name, $email, $password)) {
-            $success = 'Contul a fost creat cu succes. Te poți autentifica.';
+          header('Location: login.php?registered=1');
+          exit;
         } else {
             $error = 'Această adresă de email este deja înregistrată.';
         }
