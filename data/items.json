@@ -7,7 +7,18 @@
         "category": "Sănătate",
         "priority": "medie",
         "due_date": "2016-07-11",
-        "done": false,
+        "done": true,
         "created": "2026-06-02 11:19:24"
+    },
+    {
+        "id": "t_6a1fd37e955638.12093458",
+        "user_id": "u_6a1a7dd1a04446.13675268",
+        "title": "Examen auto",
+        "description": "Ora 12:40",
+        "category": "Personal",
+        "priority": "ridicată",
+        "due_date": "2026-06-04",
+        "done": false,
+        "created": "2026-06-03 09:10:54"
     }
 ]
