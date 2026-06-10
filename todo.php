@@ -93,16 +93,7 @@ function categoryClass(string $c): string {
   </div>
 </div>
 
-<header>
-  <a href="index.php" class="nav-logo">
-    <span class="mark">✦</span>
-    ToDo
-  </a>
-  <div class="header-right">
-    <input type="text" id="searchInput" placeholder="🔍 Caută sarcini..."/>
-    <a href="logout.php" class="notif-btn" title="Deconectare">⏻</a>
-  </div>
-</header>
+<?php include __DIR__ . '/php/header.php'; ?>
 
 <div class="wrapper">
   <nav>
@@ -211,5 +202,6 @@ function categoryClass(string $c): string {
 
 <footer>&copy; 2026 ToDo App — Micu Nicolae</footer>
 <script src="js/script.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>

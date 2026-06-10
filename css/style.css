@@ -31,12 +31,13 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: auto;
+  margin-left: 24px;
   flex-wrap: nowrap;
   position: relative;
   top: 0;
   z-index: 105;
   background: transparent;
+  padding-right: 12px;
 }
 
 .btn {
@@ -61,17 +62,15 @@ header {
   align-items: center;
   justify-content: center;
   height: 40px;
-  min-width: 110px;
+  min-width: 0;
   padding: 8px 16px;
   box-sizing: border-box;
-  /* make all header buttons the same color */
   background: #6c8ef5;
   border: 1px solid #6c8ef5;
   color: #fff;
 }
 .btn-ghost:hover { border-color: #6c8ef5; color: #6c8ef5; }
 
-/* header-specific hover for uniform buttons */
 .nav-actions a.btn:hover { background: #5a7de0; color: #fff; }
 
 .btn-primary {
@@ -241,6 +240,50 @@ nav .cat-dot {
 nav .progress-box {
   margin-top: 16px;
 }
+
+/* Theme variable overrides (applies colors set by js/theme.js) */
+body { background-color: var(--bg) !important; color: var(--text) !important; }
+header { background: var(--surface) !important; border-bottom-color: var(--border) !important; }
+.nav-logo, header .logo { color: var(--accent) !important; }
+.nav-actions a.btn, .btn-primary { background: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important; }
+.btn-ghost { background: transparent !important; border-color: var(--border2) !important; color: var(--muted) !important; }
+nav, .mini-sidebar, .preview-frame, .modal-box, .contact-box, .stat-card, .mini-card, .task-card { background: var(--card) !important; border-color: var(--border2) !important; }
+main, .mini-main { background: transparent !important; }
+.task-card .task-title, .stat-card .info .value, .mini-stat .v { color: var(--text) !important; }
+.msg-error { background: #4a1e1e !important; }
+.msg-success { background: var(--green) !important; color: #fff !important; }
+footer { background: var(--surface) !important; border-top-color: var(--border) !important; color: var(--dim) !important; }
+
+/* inputs */
+input, textarea, select { background: var(--surface) !important; color: var(--text) !important; border-color: var(--border2) !important; }
+
+/* ensure theme button stands out */
+#themeToggle { background: transparent !important; border: 1px solid var(--border2) !important; color: var(--muted) !important; }
+
+/* Light-theme specific button improvements */
+[data-theme="light"] .nav-actions a.btn,
+[data-theme="light"] .btn-primary,
+[data-theme="light"] .add-btn {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+
+[data-theme="light"] .btn-ghost {
+  background: transparent !important;
+  border-color: rgba(16,17,37,0.06) !important;
+  color: var(--accent) !important;
+}
+
+[data-theme="light"] .filters button,
+[data-theme="light"] .filters a.btn.btn-ghost {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1px solid rgba(16,17,37,0.06) !important;
+}
+
+[data-theme="light"] .btn { box-shadow: none !important; }
+[data-theme="light"] .btn-primary:hover { box-shadow: 0 8px 30px rgba(56,102,246,0.12) !important; }
 
 nav .progress-box p {
   font-size: 12px;

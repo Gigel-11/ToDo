@@ -99,7 +99,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
       font-size: 14px;
     }
 
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; margin-left: 24px; padding-right: 12px; }
 
     .btn {
       font-family: var(--font-body);
@@ -135,7 +135,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
       align-items: center;
       justify-content: center;
       height: 40px;
-      min-width: 110px;
+      min-width: 0;
       padding: 8px 16px;
       border-radius: 8px;
     }
@@ -662,6 +662,11 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     <a href="login.php" class="btn btn-ghost">Autentificare</a>
     <a href="register.php" class="btn btn-primary">Încearcă gratuit</a>
     <a href="contact.php" class="btn btn-ghost">Contact</a>
+    <button id="themeToggle" class="btn btn-ghost" title="Schimbă tema">☀️</button>
+    <select id="langSelect" aria-label="Language" style="margin-left:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:6px;border-radius:6px;">
+      <option value="ro">RO</option>
+      <option value="en">EN</option>
+    </select>
   </nav>
 </header>
 
@@ -849,5 +854,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
   );
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+<script src="js/theme.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

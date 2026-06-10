@@ -12,8 +12,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = 'Adresa de email nu este validă.';
     } else {
-      $success = 'Mesajul a fost trimis. Îți vom răspunde curând.';
-      $_POST = [];
+        $file = __DIR__ . '/data/contacts.json';
+        $list = [];
+        if (file_exists($file)) {
+            $list = json_decode(file_get_contents($file), true) ?? [];
+        }
+        $list[] = [
+            'id' => uniqid('c_', true),
+            'name' => $name,
+            'email' => $email,
+            'message' => $message,
+            'created' => date('Y-m-d H:i:s'),
+        ];
+        file_put_contents($file, json_encode($list, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        $success = 'Mesajul a fost trimis. Îți vom răspunde curând.';
+        $_POST = [];
     }
 }
 ?>
@@ -35,16 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </style>
 </head>
 <body>
-  <header>
-    <a href="index.php" class="nav-logo">
-      <span class="mark">✦</span>
-      ToDo
-    </a>
-    <nav class="nav-actions">
-      <a href="login.php" class="btn btn-ghost">Autentificare</a>
-      <a href="register.php" class="btn btn-primary">Încearcă gratuit</a>
-    </nav>
-  </header>
+  <?php include __DIR__ . '/php/header.php'; ?>
 
   <main>
     <div class="contact-box">
@@ -82,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div>
           <strong>Program</strong>
-          <div><a style="color:#6c8ef5;">Luni–Vineri, 09:00–17:00</div>
+          <div>Luni–Vineri, 09:00–17:00</div>
         </div>
       </div>
     </div>
@@ -90,4 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <footer style="margin-top:60px;text-align:center;color:#565d80;padding:24px;">&copy; 2026 ToDo App</footer>
 </body>
+<script src="js/theme.js"></script>
+<script src="js/script.js"></script>
 </html>

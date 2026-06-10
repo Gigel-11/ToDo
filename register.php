@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </style>
 </head>
 <body>
+<?php include __DIR__ . '/php/header.php'; ?>
 <div class="auth-box">
   <h2>✦ Creare cont</h2>
 
@@ -94,4 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </div>
 </body>
+<script src="js/theme.js"></script>
+<script src="js/script.js"></script>
 </html>
